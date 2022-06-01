@@ -1,6 +1,6 @@
 
 import axios from "axios";
-import { ADD_TO_CART, REMOVE_FROM_CART } from "./cartconstant";
+import { ADD_TO_CART, CHANGE_QUANTITY, REMOVE_FROM_CART } from "./cartconstant";
 import {
   PRODUCT_LIST_REQUEST,
   PRODUCT_LIST_SUCCESS,
@@ -33,4 +33,10 @@ const onRemoveFromCart = (id) => (dispatch) => {
   dispatch({type: REMOVE_FROM_CART, payload: id})
 }
 
-export {onGetProducts,onAddToCart,onRemoveFromCart}
+const onChangeQty = (id,qty) => (dispatch) => {
+  dispatch({type: CHANGE_QUANTITY, payload: {id,qty}})
+}
+
+
+
+export {onGetProducts,onAddToCart,onRemoveFromCart,onChangeQty}

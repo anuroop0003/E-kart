@@ -24,7 +24,7 @@ function ProductCard({ product, i }) {
     if(cartItems.map((item) => item.id).includes(product.id)) {
       enqueueSnackbar(`${product.title} has already been added to cart`,{variant: "warning"})
     }else {
-      enqueueSnackbar(`${product.title} is added to cart`, { variant: "success" });
+      enqueueSnackbar(`${product.title} is added to cart`, { variant: "success"});
       dispatch(onAddToCart({title:product.title, image:product.filename, qty:1, id: product.id, price: product.price}))
       console.log(JSON.parse(localStorage.getItem("cartItem")));
     }

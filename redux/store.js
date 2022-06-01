@@ -7,12 +7,13 @@ import ProductListReducer from "./productlistReducer";
 
 const initialState = {
   productList: { products: [] },
-  cartList: { cartItems: [] },
+  cartList: { cartItems: [] }
 };
 
 const reducer = combineReducers({
   productList: ProductListReducer,
   cartList: CartReducer,
+ 
 });
 
 const store = createStore(
