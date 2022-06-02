@@ -15,7 +15,7 @@ function HomePage() {
 
   useEffect(() => {
     dispatch(onGetProducts());
-  }, []);
+  }, [dispatch]);
 
   return loading ? (
     <div style={{ height: "100vh", width: "100%", backgroundColor: "#212121" }}>

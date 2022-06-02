@@ -10,6 +10,8 @@ import { useSelector } from "react-redux";
 import { Box, Button, Typography } from '@mui/material';
 import { onRemoveFromCart, onChangeQty} from '../redux/actions';
 import {useDispatch} from "react-redux"
+import Image from 'next/image';
+import ProductBottomBar from '../components/productbottombar';
 
 
 
@@ -43,10 +45,10 @@ function CartPage()
                   key={row.id}
                   sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                 >
-                  <TableCell component="th" scope="row"><img width={80} height={80} src={row.image}></img></TableCell>
+                  <TableCell component="th" scope="row"><Image width={80} height={80} src={row.image} alt={row.title}></Image></TableCell>
                   <TableCell component="th" scope="row">{row.title}</TableCell>
                   <TableCell>Rs:{row.price}</TableCell>
-                  <TableCell align="center"><input onChange={(e) => handleChange(row.id,Number(e.target.value))} size="1" maxlength="2" value={row.qty}></input></TableCell>
+                  <TableCell align="center"><input onChange={(e) => handleChange(row.id,Number(e.target.value))} size="1" maxLength="2" value={row.qty}></input></TableCell>
                   <TableCell align='right'><Button sx={{backgroundColor:"black"}} variant="contained" onClick={() => handleRemove(row.id)}>Remove</Button></TableCell>
                 </TableRow>
               ))}
